@@ -23,6 +23,6 @@ public class CurrencyConversionController {
     public CurrencyConversionBean convertCurrency(@PathVariable String from, @PathVariable String to, @PathVariable BigDecimal quantity) {
         CurrencyConversionBean response = proxy.retrieveExchangeValue(from, to);
         logger.info("{}", response);
-        return new CurrencyConversionBean(response.getId(), from, to, response.getConversionMultiple(), quantity, quantity.multiply(response.getConversionMultiple()), response.getPort());
+        return new CurrencyConversionBean(response.getId(), from, to, response.getConversionMultiple(), quantity, quantity.multiply(response.getConversionMultiple()));
     }
 }
